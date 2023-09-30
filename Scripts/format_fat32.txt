@@ -1,0 +1,6 @@
+select disk %disk_number%
+clean
+create partition primary
+format fs=fat32 quick
+assign letter=C
+exit
