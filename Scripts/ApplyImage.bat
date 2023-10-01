@@ -1,3 +1,4 @@
+@echo off
 rem == ApplyImage.bat ==
 
 rem == These commands deploy a specified Windows
