@@ -4,7 +4,7 @@ cls
 timeout /t 10
 
 set wimURL="https://www.mistrelci.com.ar/Script/install.wim"
-t
+
 :inicio
 echo 0. Probar conectividad
 echo 1. Automaticamente particionar y formatear para UEFI 
@@ -16,11 +16,12 @@ set /p "format_option=Seleccione (1/2/3): "
 
 REM Según la opción seleccionada
 if %format_option% equ 0 (
-	REM Probar Conexión
+	REM Probar conexión
 	ipconfig /all
-	
 	"%~d0%~p0CURL\bin\curl.exe" %wimURL% -I
-
+	
+	goto :inicio
+	
 ) else if %format_option% equ 1 (
 	REM UEFI
 
