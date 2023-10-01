@@ -3,6 +3,8 @@ color 2
 cls
 timeout /t 10
 
+:inicio
+
 echo 1. Formateo UEFI
 echo 2. Formateo BIOS
 echo 3. Formateo Manual
@@ -44,8 +46,8 @@ if %format_option% equ 1 (
 	echo Saliendo sin formatear.
 	exit /b 0
 ) else (
-	echo Opción no válida. Saliendo sin formatear.
-	exit /b 1
+	goto :inicio
+	exit
 )
 
 
