@@ -17,8 +17,11 @@ set /p "format_option=Seleccione (1/2/3): "
 REM Según la opción seleccionada
 if %format_option% equ 0 (
 	REM Probar conexión
+	echo ###############################
 	ipconfig /all
+	echo ###############################
 	"%~d0%~p0CURL\bin\curl.exe" %wimURL% -I
+	echo ###############################
 	
 	goto :inicio
 	
