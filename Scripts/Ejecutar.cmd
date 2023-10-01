@@ -12,7 +12,7 @@ echo 2. Automaticamente particionar y formatear para BIOS
 echo 3. Particionado y formateo manual
 echo 4. Salir
 
-set /p "format_option=Seleccione (1/2/3): "
+set /p "format_option=> "
 
 REM Según la opción seleccionada
 if %format_option% equ 0 (
@@ -53,7 +53,7 @@ if %format_option% equ 0 (
 
 	start notepad "%~d0%~p0readme.txt"
 	Diskpart
-
+	
 ) else if %format_option% equ 4 (
 	echo Saliendo sin formatear.
 	exit /b 0
