@@ -16,13 +16,13 @@ dism /Apply-Image /ImageFile:%1 /Index:1 /ApplyDir:W:\
 rem == Copy boot files to the System partition ==
 W:\Windows\System32\bcdboot W:\Windows /s S:
 
-:rem == Copy the Windows RE image to the
-:rem    Windows RE Tools partition ==
+rem == Copy the Windows RE image to the
+rem    Windows RE Tools partition ==
 md R:\Recovery\WindowsRE
 xcopy /h W:\Windows\System32\Recovery\Winre.wim R:\Recovery\WindowsRE\
 
-:rem == Register the location of the recovery tools ==
+rem == Register the location of the recovery tools ==
 W:\Windows\System32\Reagentc /Setreimage /Path R:\Recovery\WindowsRE /Target W:\Windows
 
-:rem == Verify the configuration status of the images. ==
+rem == Verify the configuration status of the images. ==
 W:\Windows\System32\Reagentc /Info /Target W:\Windows
